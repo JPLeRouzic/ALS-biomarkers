@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ALS biomarkers and progression</title>
+    </head>
+
+    <body>
+        <body>
+            <div id = "conteneur">
+                <div id = "content">
+                    <h1> What is the purpose of this page? </h1>
+                    <p>
+                        It is indeed interesting to know if an ALS patient condition is stable or deteriorating. <br/>
+                        Until 2018 there was little known biomarkers for ALS. <br/>
+                        Thanks to analysis of the ALS database PRO-ACT, scientists learned that some common biomarkers may indicate how a patient situation is evolving. <br/>
+                         <br/>
+                        Here we use a simplified interpretation of their data. There are two types of ALS, slow and fast evolving. <br/>
+                        So any biomarker level lay in one of three areas, worse than the fast evolving condition, better than the slow progression, or in between. <br/>
+                        It is also interesting to know how the biomarker is evolving: Does it stay flat or it is worsening? So we ask for two values for each biomarker. <br/>
+                    </p>
+                    We do not store any data, so we are compliant with EU's GDPR.
+		    Our indications are extremely simplified with respect to the original publication.<br>
+                     <br/> 
+                    The publication used for our calculations is :
+                    <i>Predicting functional decline and survival in amyotrophic lateral sclerosis <br/>
+                        Mei-Lyn Ong , Pei Fang Tan , Joanna D. Holbrook <br/></i>
+                    <h3 style="background-color:Tomato;">We are not medical doctors, nor biologists, so if you have any question, ask to your MD</h3>
+
+                    <div id = "form">
+                        <form action = "bmi.php" method = "GET">
+                            <h2> Alkaline phosphatase </h2>
+                            <p> The normal value for alkaline phosphatase is 53 to 128 U/L for a 20- to 50-year-old man and 42 to 98 U/L for a 20- to 50-year-old woman. Normal values are slightly different if you are older than 60, or pregnant.</p>
+                            previous value: <input type = "text" name = "AP_previousvalue" />
+                            most recent value: <input type = "text" name = "AP_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Albumin </h2>
+                            <p> Albumin typically decreases during illness, particularly illnesses that have an inflammatory component. The normal range of albumin levels is 34 to 54 grams per liter (g/L).</p>
+                            previous value: <input type = "text" name = "Alb_previousvalue" />
+                            most recent value: <input type = "text" name = "Alb_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Creatine Kinase </h2>
+                            <p> The muscle cells in your body need CK to function. If this test shows that your CK levels are high, you may have muscle damage. Normal values at rest are usually between 60 and 174 IU/L.</p>
+                            previous value: <input type = "text" name = "CK_previousvalue" />
+                            most recent value: <input type = "text" name = "CK_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Weight </h2>
+                            <p> It is important to prevent weight loss. Weight gain is recommended at a gradual pace, about 1-2 pounds gained per month until Body Mass Index (BMI) is in the 25-30 range.</p>
+                            previous value: <input type = "text" name = "Weight_previousvalue" />
+                            most recent value: <input type = "text" name = "Weight_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Chloride </h2>
+                            <p> Chloride is sometimes associated with hypoventilation. The normal serum range for chloride is 96 to 107 mEq/L. </p>
+                            previous value: <input type = "text" name = "CL_previousvalue" />
+                            most recent value: <input type = "text" name = "CL_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Bicarbonate </h2>
+                            <p> The blood value of bicarbonate is one of several indicators of the state of acid–base physiology in the body. A normal bicarbonate result ranges between 23 and 29 mmol/L. </p>
+                            previous value: <input type = "text" name = "Bic_previousvalue" />
+                            most recent value: <input type = "text" name = "Bic_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Gamma Glutamyl Transferase </h2>
+                            <p> Albumin typically decreases during illness, particularly illnesses that have an inflammatory component. Normal range for gamma GT is anywhere between 0 and 51 international units per liter. </p>
+                            previous value: <input type = "text" name = "GGT_previousvalue" />
+                            most recent value: <input type = "text" name = "GGT_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Pulse </h2>
+                            <p> Heart rates are ranging from 48-98 beats per minute. </p>
+                            previous value: <input type = "text" name = "Pulse_previousvalue" />
+                            most recent value: <input type = "text" name = "Pulse_mostrecent" />  <br/>
+                             <br/>
+                            <h2> Bilirubin </h2>
+                            <p> Total bilirubin should be lower than 21μmol/l. </p>
+                            previous value: <input type = "text" name = "Bil_previousvalue" />
+                            most recent value: <input type = "text" name = "Bil_mostrecent" />  <br/>
+                             <br/>
+                            <input type = "Submit" />
+                            <input type = "reset" value = "Reset">  <br/>
+                        </form>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>
