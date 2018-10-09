@@ -95,6 +95,7 @@ $Bil_mostrecent = 8;
 
 //***********************************
 // The normal value for alkaline phosphatase is 53 to 128 U/L 
+print '<br>You report that your alkaline phosphatase level is: '.$AP_mostrecent.' U/L '; ;
 if ($AP_mostrecent>75) 
 	{
 		print '<br>It is urgent to lower your alkaline phosphatase level, aiming below 75 U/L ';
@@ -115,16 +116,21 @@ if ($AP_mostrecent>53 and $AP_mostrecent<=75)
 else
 if ($AP_mostrecent<53) 
 	{
-	print '<br>Your alkaline phosphatase level is low but it may be OK as in ALS it is dangerous when it rises';
+	print '<br>Your alkaline phosphatase level is too low, (min: 53 U/L) , but it may be OK as in ALS it is dangerous when it rises';
 	}
+?>
+<br>
+<img src="./pictures/Alkaline_Phosphatase.png" width="825" height="600">
 
+<?php
 //***********************************
 // The normal range of albumin levels is 34 to 54 grams per liter (g/L).
+print '<br>You report that your albumin level is: '.$Alb_mostrecent.' g/L '; ;
 if ($Alb_mostrecent>45) 
 	{
 	if ($Alb_mostrecent>54) 
 		{
-		print '<br>Your albumin level is high but it may be OK as in ALS it is dangerous when it lowers';
+		print '<br>Your albumin level is too high (max: 54 g/L) but it may be OK as in ALS it is dangerous when it lowers';
 		}
 	else
 	// Albumin lower than previously
@@ -151,14 +157,19 @@ if ($Alb_mostrecent<34)
 	{
 	print '<br>It is important to rise your albumin level above 45 g/L ';
 	}
+?>
+<br>
+<img src="./pictures/Albumin.png" width="825" height="600">
 
+<?php
 //***********************************
 // CK between 60 and 174 IU/L
+print '<br>You report that your Creatine Kinase is: '.$CK_mostrecent.' IU/L '; ;
 if ($CK_mostrecent>175) 
 	{
 	if ($CK_mostrecent>200) 
 		{
-		print '<br>Your Creatine Kinase level is high but it may be OK as in ALS it is dangerous when it lowers';
+		print '<br>Your Creatine Kinase level is too high (max: 200 IU/L) but it may be OK as in ALS it is dangerous when it lowers';
 		}
 	else
 	// Creatine Kinase lower than previously
@@ -180,9 +191,14 @@ if ($CK_mostrecent<=175)
 		print '<br>It is important to rise your Creatine Kinase level above 175 IU/L ';
 		}
 	}
+?>
+<br>
+<img src="./pictures/CreatineKinase.png" width="825" height="600">
 
+<?php
 //***********************************
 // BMI should be in the 25-30 range
+print '<br>You report that your weight is: '.$Weight_mostrecent.' kg '; ;
 if ($Weight_mostrecent>80) 
 	{
 	if ($Weight_mostrecent<(0.95 * $Weight_previousvalue))
@@ -197,45 +213,54 @@ if ($Weight_mostrecent>80)
 else
 if ($Weight_mostrecent<=80) 
 	{
-	print '<br>It is urgent to rise your weight above 80 kg ';
+	print '<br>It is urgent to rise your weight above 80 kg, as it is a statistically significant treshhold ';
 	}
+?>
+<br>
+<img src="./pictures/Weight.png" width="825" height="600">
 
+<?php
 //***********************************
-// Chloride should be 96 to 107 mEq/L
-if ($CL_mostrecent>104) 
+// Chloride should be 95 to 105 mEq/L
+print '<br>You report that your chloride level is: '.$CL_mostrecent.' mEq/L '; ;
+if ($CL_mostrecent>105) 
 	{
-	if ($CL_mostrecent>107) 
-		{
-		print '<br>Your Chloride level is high but it may be OK as in ALS it is dangerous when it lowers';
-		}
-	else
 	// Chloride lower than previously
 	if ($CL_mostrecent<(0.95 * $CL_previousvalue))
 		{
-		print '<br>It is important to rise your Chloride level above '.$CL_previousvalue.' mEq/L ';
+		print '<br>It is important to rise your chloride level above '.$CL_previousvalue.' mEq/L ';
+		}
+	else
+		{
+		print '<br>Your chloride level is too high (max: 105) but it may be OK as in ALS it is dangerous when it lowers';
 		}
 	}
 else
-if ($CL_mostrecent>100 and $CL_mostrecent<=104) 
+if ($CL_mostrecent>100 and $CL_mostrecent<=105) 
 	{
 	// Alb lower than previously
 	if ($CL_mostrecent<(0.95 * $CL_previousvalue))
 		{
-		print '<br>It is urgent to rise your Chloride level above 104 mEq/L ';
+		print '<br>It is urgent to rise your chloride level above 105 mEq/L ';
 		}
 	else
 		{
-		print '<br>It is important to rise your Chloride level above 104 mEq/L ';
+		print '<br>It is important to rise your chloride level above 105 mEq/L ';
 		}
 	}
 else
 if ($CL_mostrecent<=100) 
 	{
-	print '<br>It is urgent to rise your Chloride level above 104 mEq/L ';
+	print '<br>It is urgent to rise your chloride level above 105 mEq/L ';
 	}
+?>
+<br>
+<img src="./pictures/Chloride.png" width="825" height="600">
 
+<?php
 //***********************************
 // Bicarbonate ranges between 23 and 29 mmol/L
+print '<br>You report that your bicarbonate level is: '.$Bic_mostrecent.' mmol/L '; ;
 if ($Bic_mostrecent>26) 
 	{
 		print '<br>It is urgent to lower your bicarbonate level, aiming below 25 mmol/L ';
@@ -248,14 +273,26 @@ if ($Bic_mostrecent<=26)
 		{
 		print '<br>It is important to lower your bicarbonate level below '.$Bic_previousvalue.' mmol/L ';
 		}
-/*	else
+	else
 		{
-		print '<br>Your bicarbonate level seems OK ';
-		} */
+		if ($Bic_mostrecent<=18) 
+			{
+			print '<br>It is important to rise your bicarbonate level higher than 18, but below 26 mmol/L ';
+			}
+		else 
+			{
+			print '<br>Your bicarbonate level seems OK ';
+			}
+		} 
 	}
+?>
+<br>
+<img src="./pictures/Bicarbonate.png" width="825" height="600">
 
+<?php
 //***********************************
 // Gamma Glutamyl Transferase between 0 and 51 U/L
+print '<br>You report that your Gamma Glutamyl Transferase level is: '.$GGT_mostrecent.' U/L '; ;
 if ($GGT_mostrecent>35) 
 	{
 		print '<br>It is urgent to lower your Gamma Glutamyl Transferase level, aiming below 35 U/L ';
@@ -273,12 +310,17 @@ if ($GGT_mostrecent<=35)
 		print '<br>Your Gamma Glutamyl Transferase level seems OK ';
 		} */
 	}
+?>
+<br>
+<img src="./pictures/Gamma-GT.png" width="825" height="600">
 
+<?php
 //***********************************
 // Heart rates are ranging from 48-98 beats per minute
+print '<br>You report that your heart rate is: '.$Pulse_mostrecent.' bpm '; ;
 if ($Pulse_mostrecent>75) 
 	{
-		print '<br>It is urgent to lower your Heart rate, aiming below 75 bpm ';
+		print '<br>It is urgent to lower your heart rate, aiming below 75 bpm ';
 	}
 else
 if ($Pulse_mostrecent<=75) 
@@ -286,16 +328,26 @@ if ($Pulse_mostrecent<=75)
 	// Pulse higher than previously
 	if ($Pulse_mostrecent>(1.05 * $Pulse_previousvalue))
 		{
-		print '<br>It is important to lower your Heart rate below '.$Pulse_previousvalue.' bpm ';
+		print '<br>It is important to lower your heart rate below '.$Pulse_previousvalue.' bpm ';
 		}
-/*	else
+	else
 		{
-		print '<br>Your Heart rate seems OK ';
-		} */
+		if ($Pulse_mostrecent<=48) 
+			{
+			print '<br>Your heart rate seems too slow, it should be higher than 48 bpm ';
+			}
+		else
+			print '<br>Your heart rate seems OK ';
+		} 
 	}
+?>
+<br>
+<img src="./pictures/Pulse.png" width="825" height="600">
 
+<?php
 //***********************************
 // Bilirubin should be lower than 21μmol/l
+print '<br>You report that your bilirubin level is: '.$Bil_mostrecent.' μmol/L '; ;
 if ($Bil_mostrecent>10) 
 	{
 		print '<br>It is urgent to lower your bilirubin, aiming below 10 μmol/l ';
@@ -313,24 +365,11 @@ if ($Bil_mostrecent<=10)
 		print '<br>Your bilirubin seems OK ';
 		} */
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
-<hr />
+<br>
+<img src="./pictures/Bilirubin.png" width="825" height="600">
+
+<hr/>
 </div>
 </div>
 </body>
